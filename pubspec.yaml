@@ -1,0 +1,82 @@
+name: mobile_lazy_pot
+description: The app used for the lazy pot
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.2 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  location_permissions: ^4.0.0
+  cupertino_icons: ^1.0.2
+  permission_handler: ^10.4.2
+  flutter_riverpod: ^2.3.6
+  flutter_reactive_ble: ^5.1.1
+  flutter_blue_plus: ^1.5.2
+  animations: ^2.0.7
+  connectivity_plus: ^4.0.1
+  uuid: ^3.0.7
+  wifi_scan: ^0.4.0+2
+  http: ^1.0.0 
+  wifi_connector: 
+    path: C:/projects/flutter_wifi_connector
+  flutter_svg: ^2.0.7
+  font_awesome_flutter: ^10.5.0
+  timeago: ^3.5.0
+  darq: ^2.0.0
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/leaf-outline.svg
+    - assets/moisture.svg
+    - assets/header_detail.jpg
+    - assets/add_pot_white.png
+    - assets/header_green.png
+    - assets/bottom_green.png
+    - assets/background_instructions.png
+    - assets/wifi.png
+    - assets/wifi_2.png
+    - assets/wifi_3.png
+    - assets/wifi_4.png
+    - assets/connect_white.png
+    - assets/home_wifi.png
+    - assets/home_wifi_transparant.png
+    - assets/cancel_red.png
+    - assets/smartphone_loading.png
+    - assets/water_fancy.png
+    - assets/battery_fancy.png
+    - assets/soil_fancy.png
+    - assets/trash_red.png
+    - assets/detail_bottom.png
+    - assets/battery_fancy_0.png
+    - assets/battery_fancy_1.png
+    - assets/battery_fancy_2.png
+    - assets/battery_fancy_3.png
+    - assets/battery_fancy_4.png
+    - assets/add_pot_black_transparant.png
+    - assets/home_wifi_transparant.png
+    - assets/smartphone_check_transparant.png
+    - assets/right_arrow_transparant.png
+    - assets/logo.png
+
+  fonts:
+    - family: Akko Pro
+      fonts:
+        - asset: assets/fonts/AkkoPro-Regular.ttf
+    - family: Soho Pro
+      fonts:
+        - asset: assets/fonts/SohoPro-Medium.ttf
+    - family: SourceSans
+      fonts:
+        - asset: assets/fonts/SourceSansPro-Regular.ttf
