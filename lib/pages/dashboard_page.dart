@@ -47,7 +47,6 @@ class DashboardPage extends ConsumerWidget {
                     child: Image(
                       image: const AssetImage('assets/header_green.png'),
                       width: width,
-                      height: 180,
                     ),
                   ),
                   Positioned(

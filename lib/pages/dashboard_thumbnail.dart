@@ -17,12 +17,13 @@ class DashboardThumbnail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // var width = MediaQuery.of(context).size.width;
-    // var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width / 1000;
+    var height = MediaQuery.of(context).size.height / 1000;
+
     return InkWell(
       child: Container(
-        padding: const EdgeInsets.only(left: 15.0, top: 10),
-        margin: const EdgeInsets.only(left: 10, top: 10, right: 10, bottom: 5),
+        padding: EdgeInsets.only(left: width * 30, top: height * 10),
+        margin: EdgeInsets.only(left: width * 10, top: height * 10, right: width * 10, bottom: height * 5),
         height: double.infinity,
         width: double.infinity,
         decoration: BoxDecoration(
@@ -46,7 +47,7 @@ class DashboardThumbnail extends StatelessWidget {
             ),
             const Spacer(),
             Container(
-                margin: const EdgeInsets.only(right: 15, top: 5, left: 5, bottom: 5),
+                margin: EdgeInsets.only(right: width * 30, top: height * 10, left: width * 5, bottom: 5),
                 child: InkWell(
                   onTap: () {
                     final dashboardNotifier = ref.watch(dashboardNotifierProvider.notifier);
@@ -59,35 +60,35 @@ class DashboardThumbnail extends StatelessWidget {
                 ))
           ]),
           Container(
-            padding: const EdgeInsets.only(left: 7.0, top: 10),
+            padding: EdgeInsets.only(left: width * 15.0, top: height * 10),
             child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               Row(children: [
                 const Image(
                   image: AssetImage('assets/soil_fancy.png'),
                   width: 20,
                 ),
-                const SizedBox(width: 10),
+                SizedBox(width: width * 10),
                 Text(
                   "${thumbnail.lastMeasurement.moistureLevelMeasure.round()}%",
                   style: textStyleSoho10Darkgrey,
                 )
               ]),
-              const SizedBox(height: 10),
+              SizedBox(height: height * 10),
               Row(children: [
                 const Image(
                   image: AssetImage('assets/water_fancy.png'),
                   width: 20,
                 ),
-                const SizedBox(width: 10),
+                SizedBox(width: width * 10),
                 Text(
                   "${thumbnail.lastMeasurement.waterLevelMeasure.round()}%",
                   style: textStyleSoho10Darkgrey,
                 )
               ]),
-              const SizedBox(height: 10),
+              SizedBox(height: height * 10),
               Row(children: [
                 getBatteryImage(thumbnail.lastMeasurement.batteryLevel),
-                const SizedBox(width: 10),
+                SizedBox(width: width * 10),
                 Text(
                   "${thumbnail.lastMeasurement.batteryLevel.round()}%",
                   style: textStyleSoho10Darkgrey,
@@ -96,7 +97,7 @@ class DashboardThumbnail extends StatelessWidget {
             ]),
           ),
           Container(
-            margin: const EdgeInsets.only(right: 15.0, top: 10),
+            margin: EdgeInsets.only(right: width * 25.0, top: height * 10),
             child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
               Container(padding: const EdgeInsets.only(top: 5), child: Text(timeUntil(thumbnail.lastMeasurement.created), style: textStyleRoboto8Lightgrey)),
               const SizedBox(width: 3),

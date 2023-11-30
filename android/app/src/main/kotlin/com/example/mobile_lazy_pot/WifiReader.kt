@@ -1,4 +1,4 @@
-package com.example.mobile_lazy_pot
+package com.vollebregt.mobile_lazy_pot
 
 import android.net.ConnectivityManager
 import android.net.Network
