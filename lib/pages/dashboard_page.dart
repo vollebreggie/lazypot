@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mobile_lazy_pot/providers.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../styles/color_pallet.dart';
 import '../styles/responsive_ui.dart';

@@ -24,7 +24,7 @@ class LazyPotDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    //var height = MediaQuery.of(context).size.height;
+    var height = MediaQuery.of(context).size.height;
 
     if (_nameController.text.isEmpty) {
       FocusScope.of(context).requestFocus(focusNode);
@@ -219,8 +219,135 @@ class LazyPotDetailPage extends StatelessWidget {
                   ],
                 ),
               ),
+              const SizedBox(height: 20),
             ],
           ),
+        ),
+        Positioned(
+          top: height * 0.46,
+          left: 10,
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text(
+              "Waterlevel",
+              style: textStyleSoho14Darkgrey,
+            ),
+            SizedBox(height: height * 0.02),
+            Row(
+              children: [
+                Consumer(builder: (context, ref, child) {
+                  final dashboardDetailNotifier = ref.watch(dashboardDetailNotifierProvider);
+                  var waterLevel = dashboardDetailNotifier.waterLevelTest == -1 ? thumbnail.lazyPot.waterLevelMode : dashboardDetailNotifier.waterLevelTest;
+
+                  return InkWell(
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: waterLevel != 0 ? Colors.white : Colors.grey,
+                          borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                          boxShadow: const [BoxShadow(blurRadius: 10, color: Color.fromARGB(255, 143, 140, 140), offset: Offset(1, 3))]),
+                      width: width * 0.30,
+                      height: height * 0.15,
+                      child: Column(children: [
+                        SizedBox(height: height * 0.01),
+                        SizedBox(
+                          width: width * 0.2,
+                          height: height * 0.1,
+                          child: const Image(
+                            image: AssetImage('assets/desert.png'),
+                            width: 20,
+                            height: 20,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        SizedBox(height: height * 0.01),
+                        Text(
+                          "Desert",
+                          style: textStyleSoho14Darkgrey,
+                        )
+                      ]),
+                    ),
+                    onTap: () {
+                      final dashboardDetailNotifier = ref.watch(dashboardDetailNotifierProvider.notifier);
+                      dashboardDetailNotifier.updateWaterLevel(0, thumbnail.lazyPot.id);
+                    },
+                  );
+                }),
+                SizedBox(width: width * 0.03),
+                Consumer(builder: (context, ref, child) {
+                  final dashboardDetailNotifier = ref.watch(dashboardDetailNotifierProvider);
+                  var waterLevel = dashboardDetailNotifier.waterLevelTest == -1 ? thumbnail.lazyPot.waterLevelMode : dashboardDetailNotifier.waterLevelTest;
+                  return InkWell(
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: waterLevel != 1 ? Colors.white : Colors.grey,
+                          borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                          boxShadow: const [BoxShadow(blurRadius: 10, color: Color.fromARGB(255, 143, 140, 140), offset: Offset(1, 3))]),
+                      width: width * 0.30,
+                      height: height * 0.15,
+                      child: Column(children: [
+                        SizedBox(height: height * 0.01),
+                        SizedBox(
+                          width: width * 0.2,
+                          height: height * 0.1,
+                          child: const Image(
+                            image: AssetImage('assets/normal.png'),
+                            width: 20,
+                            height: 20,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        SizedBox(height: height * 0.01),
+                        Text(
+                          "Normal",
+                          style: textStyleSoho14Darkgrey,
+                        )
+                      ]),
+                    ),
+                    onTap: () {
+                      final dashboardDetailNotifier = ref.watch(dashboardDetailNotifierProvider.notifier);
+                      dashboardDetailNotifier.updateWaterLevel(1, thumbnail.lazyPot.id);
+                    },
+                  );
+                }),
+                SizedBox(width: width * 0.03),
+                Consumer(builder: (context, ref, child) {
+                  final dashboardDetailNotifier = ref.watch(dashboardDetailNotifierProvider);
+                  var waterLevel = dashboardDetailNotifier.waterLevelTest == -1 ? thumbnail.lazyPot.waterLevelMode : dashboardDetailNotifier.waterLevelTest;
+                  return InkWell(
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: waterLevel != 2 ? Colors.white : Colors.grey,
+                          borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                          boxShadow: const [BoxShadow(blurRadius: 10, color: Color.fromARGB(255, 143, 140, 140), offset: Offset(1, 3))]),
+                      width: width * 0.30,
+                      height: height * 0.15,
+                      child: Column(children: [
+                        SizedBox(height: height * 0.01),
+                        SizedBox(
+                          width: width * 0.2,
+                          height: height * 0.1,
+                          child: const Image(
+                            image: AssetImage('assets/tropical.png'),
+                            width: 20,
+                            height: 20,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        SizedBox(height: height * 0.01),
+                        Text(
+                          "Tropical",
+                          style: textStyleSoho14Darkgrey,
+                        )
+                      ]),
+                    ),
+                    onTap: () {
+                      final dashboardDetailNotifier = ref.watch(dashboardDetailNotifierProvider.notifier);
+                      dashboardDetailNotifier.updateWaterLevel(2, thumbnail.lazyPot.id);
+                    },
+                  );
+                })
+              ],
+            )
+          ]),
         ),
       ]),
     ));

@@ -49,4 +49,14 @@ class KataskoposApi {
 
     return connection;
   }
+
+  Future<LazyPotConnectionDTO> updateWaterLevel(int waterLevel, int lazyPotId) async {
+    var uri = Uri.parse('$serverSocketAddress/updateWaterLevel/$lazyPotId/$waterLevel');
+    var response = await http.get(uri, headers: {'Content-Type': 'application/json'});
+
+    var jsonReponse = json.decode(response.body);
+    var connection = LazyPotConnectionDTO.fromJson(jsonReponse['response']);
+
+    return connection;
+  }
 }

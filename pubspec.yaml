@@ -28,6 +28,7 @@ dependencies:
   font_awesome_flutter: ^10.5.0
   timeago: ^3.5.0
   darq: ^2.0.0
+  shared_preferences: ^2.2.2
   
 dev_dependencies:
   flutter_test:
@@ -49,6 +50,9 @@ flutter:
     - assets/wifi_2.png
     - assets/wifi_3.png
     - assets/wifi_4.png
+    - assets/desert.png
+    - assets/normal.png
+    - assets/tropical.png
     - assets/connect_white.png
     - assets/home_wifi.png
     - assets/home_wifi_transparant.png
